@@ -1,4 +1,4 @@
 PySerialColor
 =============
 
-For reader_asja. &lt;3
+Example implementation of utils and test for USB-DMX-LED in python.
