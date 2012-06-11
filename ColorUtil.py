@@ -45,7 +45,7 @@ class ColorUtil:
             g = 86
             b = 0
 
-        if r == 0 and g == 0 and b == 0: print "ERROR: No definition for color %s found." % s
+        if r == 0 and g == 0 and b == 0: print "ERROR: No definition for color %s found." % colorString
 
         print "setColor(%s, %s, %s)" % (str(r), str(g), str(b))
         return r, g, b

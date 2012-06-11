@@ -1,14 +1,18 @@
 #! /bin/python
 
-import time
+import serial
 
 import ColorUtil
 import SerialUtil
 
-su = SerialUtil.SerialUtil()
-cu = ColorUtil.ColorUtil()
+try:
+    su = SerialUtil.SerialUtil()
+    su.setColor("228", "128", "64")
+except serial.serialutil.SerialException:
+    print "Initializing SerialUtil failed. Is /dev/ttyUSB0 connected?"
 
-color = cu.getColorByName("gold")
-time.sleep(3)
-color = cu.getColorByName("navy")
-su.setColor(color[0], color[1], color[2])
+cu = ColorUtil.ColorUtil()
+gold = cu.getColorByName("gold")
+print "Gold is rgb%s." % (str(gold))
+navy = cu.getColorByName("navy")
+print "Navy is rgb%s." % (str(navy))
